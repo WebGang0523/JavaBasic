@@ -16,8 +16,25 @@ class Window2 implements Runnable{
     @Override
     public void run() {
         while (ticket > 0) {
-            System.out.println(Thread.currentThread().getName()+ ":" +ticket);
-            ticket--;
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            synchronized (Window2.this) {
+                if (ticket > 0) {
+
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                    System.out.println(Thread.currentThread().getName()+ ":" +ticket);
+                    ticket--;
+                }
+            }
         }
     }
 }
