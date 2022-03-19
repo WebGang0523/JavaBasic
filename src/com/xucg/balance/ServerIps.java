@@ -5,6 +5,9 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * https://blog.csdn.net/qq_24101357/article/details/102486316
+ */
 public class ServerIps {
 
     // 定义一个服务器列表
